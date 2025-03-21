@@ -34,16 +34,14 @@ class ${toPascalCase(fileName)}Api extends HttpClient {
 
 export const api = new ${toPascalCase(fileName)}Api();
 `,
-  queries: `import { api } from './${fileName}.api';`,
-  schemas: `import { z } from 'zod';
-import { createMutationKeys, createQueryKeys } from '@shared/lib/react-query';
+  queries: `import { createMutationKeys, createQueryKeys } from '@shared/lib/react-query';
+import { api } from './${fileName}.api';
 
-const queries = createQueryKeys(api.endPoint, {
-});
+const queries = createQueryKeys(api.endPoint, {});
 
-const mutations = createMutationKeys(api.endPoint, {
-});
+const mutations = createMutationKeys(api.endPoint, {});  
   `,
+  schemas: `import { z } from 'zod';`,
   types: `import type { z } from 'zod';
 import type {} from './${fileName}.schemas'
 `,

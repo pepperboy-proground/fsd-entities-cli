@@ -66,7 +66,7 @@ program.version("1.0.0").action(async () => {
     },
   ]);
 
-  const targetDir = path.resolve(process.cwd(), answers.directory);
+  const targetDir = path.resolve(process.cwd(), answers.directory, answers.fileName);
   const fileName = answers.fileName;
 
   if (!fileName) {

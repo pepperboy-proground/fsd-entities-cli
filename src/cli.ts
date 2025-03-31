@@ -23,10 +23,10 @@ const toScreamingSnakeCase = (str: string): string => {
 };
 
 const templates = (fileName: string) => ({
-  api: `import { EndPoint, HttpClient } from '@shared/http';
+  api: `import { EndPoint, Http } from '@shared/http';
 import type {} from './${fileName}.types.ts';
 
-class ${toPascalCase(fileName)}Api extends HttpClient {
+class ${toPascalCase(fileName)}Api extends Http {
   constructor() {
     super(EndPoint.${toScreamingSnakeCase(fileName).toUpperCase()});
   }
